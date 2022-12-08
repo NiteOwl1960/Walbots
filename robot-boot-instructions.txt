@@ -1,0 +1,29 @@
+I thought someone should write down the robot boot sequence, since the knowledge is unevenly distributed at present:
+
+1) Power up the Robot Controller phone (the one whose identity ends in "-RC").  I like to wait a few seconds here, to let it boot up first, so that it starts hosting the WiFiDirect network, so that it is available to the other phone when it boots up and looks for it.
+
+2) Power up the Rev Expansion Hub on the robot.  (The Rev Expansion Hub isn't strictly necessary if you are using only software, e.g. to test image recognition.)
+
+3) If it is not already plugged into the -RC phone, plug the Expansion Hub into the phone (using an on-the-go (OTG) cable).  This should autolaunch the FIRST app.
+
+4) If the FIRST app isn't already running on the -RC phone, launch it manually.  Merely booting up this phone provides the WiFiDirect service.  Running the FIRST app additionally provides the robot communication protocol service.
+
+5) Power up the Drive Station phone (the one whose identity ends in "-DS").  There are two paired sets of phones, with -A- and -B- in their names.
+
+6) [optional, but required if you want to use one] Plug one or two Gamepads into the -DS phone, using a different style OTG cable (with a female USB-A connector) and, optionally, a USB hub to plug in two Gamepads.  This should autolaunch the FIRST app on the -DS phone.  (Before connecting the gamepad, verify that the switch on the bottom of the gamepad is set to the <X> position.)
+
+7) If the FIRST app isn't already running on the -DS phone, launch it manually.  There is a circular indicator in the app that tells you if it is communicating with the WiFiDirect service.  There is a second circular indicator that tells you if it is communicating with the robot communication protocol service on the other phone.  If you have problems later, checking these indicators may indicate that you should wake up or reboot the -RC phone.
+
+8) If you are using a Gamepad, press the <Start> and <A> buttons simultaneously to inform the FIRST software that it will be Gamepad 1.  Press the <Start> and <B> buttons simultaneously for a Gamepad 2.  The FIRST software will indicate success by lighting up a gamepad icon at the top of the display for each Gamepad.  If you forget to do this, there will be no error messages.  It will just seem like the Gamepads don't work.
+
+9) The hamburger menu at the top-right of the FIRST app on the -RC phone contains a command "Configure Robot".  This command selects from a number of robot configurations, which can be edited and activated.  The configuration designates a mapping between actual real-life hardware components and the the names for that hardware in the software.  E.g. a servo plugged into port 0 could be named "bell_ringer".  Configurations can be shared.  E.g. for now, we use the same Snowbot configuration for Blocks and Java programming.  The FIRST app shows the active configuration name at top-left, so you can skip this command if the correct configuration is already activated.
+
+10) On the -DS phone, there are two large popdown menus with giant downward-pointing triangle buttons.  To select an 'Op-Mode' (user program), pick it in the menu.  The left triangle menu is for "autonomous" programs (with no user control) and "Tele-Op" programs normally controlled by a user with a Gamepad (or two).  Although the FIRST app remembers the last op-mode selected, it is sometimes necessary to re-select it, if the program has been edited remotely in the meantime [but not always??].
+
+11)  Once the op-mode is selected, it is necessary to click the <Init> button to initialize it, and then click the <Run> button to start the main part of the program running.  Some init routines output a line or two at the bottom of the FIRST screen, telling the user that the robot is ready to run.  When the program is running, a <Stop> button will appear.  You can guess what that's for.
+
+12) If you want to edit the programs on the robot (Java or Blocks), use the hamburger menu at top-right of the FIRST app on the -DS phone to select the "Program and Manage" command.  That command will turn on the programming server (on the -RC phone, where the programs live) and display the connection info you need for your computer (WiFiDirect network and password, and URL for the web-based programming interface, Chrome recommended).  Note that the URL is http, not https, so you might need to click through some warnings, or turn off a strict security setting in Chrome.  Note that the "Save Opmode" command in the web interfaces saves to the -RC phone, not to your computer.  To save a copy to the computer, there is a button labelled <Download> (I think).  The rest of the programming interface is way too much to document here.
+
+HTH!  --Christopher
+
+
