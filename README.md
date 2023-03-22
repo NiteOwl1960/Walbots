@@ -1,7 +1,11 @@
 # Walbots
 
-The .tflite is the best "tensor flow lite" model I've tested.  (The other, newer, ones on the -RC phone are untested and probably worse.)  The 1130 means I made it on November 30.
+The club should get its own Github account, but until then, I'll share stuff in this [folder?].  Github would be ideal for collaborating on the team engineering notebook.  IMO each club member should create his own Github account.  You'll want one sooner or later anyway.  If everyone had an account, I wouldn't have to keep this folder publically readable (which I don't love).
 
-snowbot_offline_blocks_editor is based on the snowbot phones and FRENZYright...zip is based on the main robot phones.  Unpack and run with Chrome browser to edit without the actual hardware available.  You can "download" blocks op-modes from the  offline blocks editor and "upload" them to the real phones later.
+I would like it if other club members contributed, too.
 
-Power1.blk is the block code we drove on Monday afternoon.
+Uploading is easy.  Downloading is tricky if you don't know the ins and outs of Github.  (I'm a newb, myself.)
+
+I download most individual files by clicking on the filename, which takes you to a web page about that file.  There is often a button labeled "Raw".  If you click it, the page asks your browswer to load and display that file, which doesn't make sense for most "binary" files.  But if you "right click" or "control click" that button, you'll get a popup menu which lets you "Download Linked File" to download that file to your own disk.
+
+Note that the club does have its own Discord channel with several subchannels for meeting notes, etc.
