@@ -1,7 +1,9 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
 <variables>
 <variable id="Rya|Wl$9K/!%q5po^IXh">power</variable>
+<variable id="$2)+@CZ?OlduOK5Hh!^9">LFRB power</variable>
 <variable id="{=oXbM61umnYy..@K*4h">move speed</variable>
+<variable id="H1jW@:b@liA|@RNzBCNh">RFLB power</variable>
 <variable id="u%-aMPrKDk[MaQTL;xr3">spin speed</variable>
 </variables>
 <block type="procedures_defnoreturn" id="S6F+3,h-#?m,nx-1T+d}" x="-284" y="-164">
@@ -201,7 +203,7 @@
 </block>
 </statement>
 </block>
-<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="-415" y="127">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="-433" y="107">
 <field name="NAME">runOpMode</field>
 <comment pinned="false" h="45" w="532">This function is executed when this Op Mode is selected from the Driver Station.</comment>
 <statement name="STACK">
@@ -212,7 +214,7 @@
 <field name="VAR" id="{=oXbM61umnYy..@K*4h">move speed</field>
 <value name="VALUE">
 <block type="math_number" id="kt)3@S@6aQ|y3_dnMyJq">
-<field name="NUM">0.15</field>
+<field name="NUM">0.3</field>
 </block>
 </value>
 <next>
@@ -277,7 +279,7 @@
 <field name="VAR" id="{=oXbM61umnYy..@K*4h">move speed</field>
 <value name="VALUE">
 <block type="math_number" id="Sy)GpWj$/s]^tEsPPnX/">
-<field name="NUM">0.5</field>
+<field name="NUM">0.75</field>
 </block>
 </value>
 <next>
@@ -304,7 +306,7 @@
 <field name="VAR" id="{=oXbM61umnYy..@K*4h">move speed</field>
 <value name="VALUE">
 <block type="math_number" id="J)_D]0_sp_IINO5*iA2f">
-<field name="NUM">0.15</field>
+<field name="NUM">0.3</field>
 </block>
 </value>
 <next>
@@ -320,13 +322,13 @@
 </block>
 </statement>
 <next>
-<block type="procedures_callnoreturn" id="H6{3cgIP{EA*=t5e6;3|">
+<block type="procedures_callnoreturn" id="H6{3cgIP{EA*=t5e6;3|" disabled="true">
 <mutation name="move forward">
 <arg name="power"/>
 </mutation>
 <value name="ARG0">
 <block type="math_arithmetic" id="cr_=wWqt$WsL`O)VaSsq">
-<field name="OP">DIVIDE</field>
+<field name="OP">MULTIPLY</field>
 <value name="A">
 <shadow type="math_number" id="sw[Bx;sk/UHda@l:#9$O">
 <field name="NUM">1</field>
@@ -349,17 +351,20 @@
 <shadow type="math_number" id="L~OQE3HC((.mXZ;5Q[rI">
 <field name="NUM">4</field>
 </shadow>
+<block type="variables_get" id=";-PZVCe@RI6ip:/@iZzl">
+<field name="VAR" id="{=oXbM61umnYy..@K*4h">move speed</field>
+</block>
 </value>
 </block>
 </value>
 <next>
-<block type="procedures_callnoreturn" id="$K1Ei!{@[;)m-Q]3J3HE">
+<block type="procedures_callnoreturn" id="$K1Ei!{@[;)m-Q]3J3HE" disabled="true">
 <mutation name="move right">
 <arg name="power"/>
 </mutation>
 <value name="ARG0">
 <block type="math_arithmetic" id="3}lu.GDF)WE0PEwI-(F4">
-<field name="OP">DIVIDE</field>
+<field name="OP">MULTIPLY</field>
 <value name="A">
 <shadow type="math_number" id="yA`DQ5f?8IfHO.rX7}C5">
 <field name="NUM">1</field>
@@ -374,7 +379,20 @@
 <shadow type="math_number" id="aycMtufL7*,66PgJ=Qi9">
 <field name="NUM">4</field>
 </shadow>
+<block type="variables_get" id="YksQe:#5qzQ*+L:nlnLS">
+<field name="VAR" id="{=oXbM61umnYy..@K*4h">move speed</field>
+</block>
 </value>
+</block>
+</value>
+<next>
+<block type="procedures_callnoreturn" id="13~w6IcBt~sVMyxvsI8:">
+<mutation name="move both">
+<arg name="power"/>
+</mutation>
+<value name="ARG0">
+<block type="variables_get" id="`U]W6e3hF{g[SScEifuU">
+<field name="VAR" id="{=oXbM61umnYy..@K*4h">move speed</field>
 </block>
 </value>
 <next>
@@ -384,7 +402,7 @@
 </mutation>
 <value name="ARG0">
 <block type="math_arithmetic" id="m5:*igtGe)m|meO~Hc|U">
-<field name="OP">DIVIDE</field>
+<field name="OP">MULTIPLY</field>
 <value name="A">
 <shadow type="math_number" id="N6$IGn8d%,J)h9jIVRCZ">
 <field name="NUM">1</field>
@@ -399,9 +417,14 @@
 <shadow type="math_number" id="MWlW~Sr-%U}+|xBh|8m@">
 <field name="NUM">4</field>
 </shadow>
+<block type="variables_get" id="KivrESf4Lk7EHAg-tF_=">
+<field name="VAR" id="u%-aMPrKDk[MaQTL;xr3">spin speed</field>
+</block>
 </value>
 </block>
 </value>
+</block>
+</next>
 </block>
 </next>
 </block>
@@ -422,6 +445,195 @@
 </next>
 </block>
 </next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="procedures_defnoreturn" id="Q{o1HpR,AjZ)|!g@7Fpb" x="142" y="108">
+<mutation>
+<arg name="power" varid="Rya|Wl$9K/!%q5po^IXh"/>
+</mutation>
+<field name="NAME">move both</field>
+<comment pinned="false" h="80" w="160">Describe this function...</comment>
+<statement name="STACK">
+<block type="variables_set" id="fX[|H/zKhk[*u:?GJz4~">
+<field name="VAR" id="$2)+@CZ?OlduOK5Hh!^9">LFRB power</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="D7ju{._x|-y$GV8%9@}I">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number" id="6i(FgtaQhEvraB^:7BF;">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="}.cpe(qcuY+:?`O6uU5G">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number" id="@x,5/bu-3|Rviv7MPB$a">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="+_Z(=j6Z~R3f6Rs~fems">
+<field name="VAR" id="Rya|Wl$9K/!%q5po^IXh">power</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="HqIvC83WZ=Kzv]{!aBj%">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="O}:2W={Hgf=z$zX+MWJy">
+<field name="OP">ADD</field>
+<value name="A">
+<shadow type="math_number" id="nOs8u=|m+pIl{TV{IA|`">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="Mg+[~wj,?Q[:7%c;]AlN">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="bB])WjpT5Emd:z^8YU.L">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id=":iCd~fKKy.(|}zERc9h,">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="9Hdua$TM)BsP.W~oG#jF">
+<field name="NUM">9</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="/bY8]fV=Z%l:[s69}65)">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="du_F/V5sqryLyG_T,~+d">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="variables_set" id=")U.b(Om%2[XGZon+(%KT">
+<field name="VAR" id="H1jW@:b@liA|@RNzBCNh">RFLB power</field>
+<value name="VALUE">
+<block type="math_arithmetic" id="b_z;;5]W/IGYeNxl(:na">
+<field name="OP">DIVIDE</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="]QPF.}iO+$j/ou.KZ%fg">
+<field name="OP">MULTIPLY</field>
+<value name="A">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="yU)28nXK]${8`-PWFgh|">
+<field name="VAR" id="Rya|Wl$9K/!%q5po^IXh">power</field>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_arithmetic" id="ha+.fzpKq|w{ApNugq~b">
+<field name="OP">MINUS</field>
+<value name="A">
+<shadow type="math_number" id="C;vTl3;.I(2[eM=eS|wV">
+<field name="NUM">1</field>
+</shadow>
+<block type="math_single" id="9O{b818Ob(ShG:zmwx?a">
+<field name="OP">NEG</field>
+<value name="NUM">
+<shadow type="math_number" id="kyY=q+:b6:HYBCLDkX,l">
+<field name="NUM">9</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="~jvpb;O$x+XG(^+e=u**">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickY</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="sY~bCNC!XFwT.XuXG-[x">
+<field name="NUM">1</field>
+</shadow>
+<block type="gamepad_getProperty_Number" id="7p_xbGY{m^Im#;jn+l4n">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">LeftStickX</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+</block>
+</value>
+</block>
+</value>
+<value name="B">
+<shadow type="math_number" id="|EZ]N$nGFKUWEm!--^(v">
+<field name="NUM">2</field>
+</shadow>
+</value>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="I[R?JZ0`($ClzLo5U}Cl">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">LeftFrontAsDcMotor</field>
+<field name="IDENTIFIER2">RightFrontAsDcMotor</field>
+<data>{"IDENTIFIER1":"LeftFront","IDENTIFIER2":"RightFront"}</data>
+<value name="VALUE1">
+<shadow type="math_number" id="SmJ6AXF$H.}O/z(lk*gg">
+<field name="NUM">0</field>
+</shadow>
+<block type="variables_get" id=";Ab]vB28W9^dAJTb[x^6">
+<field name="VAR" id="$2)+@CZ?OlduOK5Hh!^9">LFRB power</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="J=vO5?(=#_u*S7ELLXb2">
+<field name="VAR" id="H1jW@:b@liA|@RNzBCNh">RFLB power</field>
+</block>
+</value>
+<next>
+<block type="dcMotor_setDualProperty_Number" id="/yG)Pn$L0BsixJGJx?{t">
+<field name="PROP">Power</field>
+<field name="IDENTIFIER1">LeftRearAsDcMotor</field>
+<field name="IDENTIFIER2">RightRearAsDcMotor</field>
+<data>{"IDENTIFIER1":"LeftRear","IDENTIFIER2":"RightRear"}</data>
+<value name="VALUE1">
+<shadow type="math_number">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id=";}U2RQvGtC$e_OT/rqt=">
+<field name="VAR" id="H1jW@:b@liA|@RNzBCNh">RFLB power</field>
+</block>
+</value>
+<value name="VALUE2">
+<shadow type="math_number" id="zof]Mc#myRcu)unSOl(Z">
+<field name="NUM">1</field>
+</shadow>
+<block type="variables_get" id="#l/QiY4pgg}#UiJYAUr7">
+<field name="VAR" id="$2)+@CZ?OlduOK5Hh!^9">LFRB power</field>
+</block>
+</value>
 </block>
 </next>
 </block>
